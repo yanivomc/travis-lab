@@ -1,13 +1,22 @@
+# The ‘language’ section is used to specify the language of the software
 language: python
+# Sudo Secton: Do you need the code / tests run under sudo ? 
 sudo: required
+# Version section is for what version of python that we wish to use for testing.
+# Multiple version can be configured 
 python:
   - "2.7"
   - "3.4"
+# install section is for specifying commands to run before the testing such as
+# installing dependinces or compilation of required packages.
 install:
    - pip install -r requirements.txt
-
+# the script section is used for specifying the command to run for testing the code.
+# it can be simple as just running 'python hello_world.py' or running full suit of
+# unittest as seen below.
+# NOTE that failed runs must exit with code other then 0.
 script:
-
+  - python hello.py
   - python -m unittest PersonTest.Test
 
 notifications:
