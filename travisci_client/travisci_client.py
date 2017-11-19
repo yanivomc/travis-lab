@@ -1,6 +1,6 @@
 from travispy import TravisPy
 
-t = TravisPy.github_auth('156d4e141465c32f02d5dd2a5cdac41811242cd1')
+t = TravisPy.github_auth('a8a470484a3876aa338e8fddfa3cfcdcfb037850')
 user = t.user()
 repos = t.repos(member=user.login)
 
@@ -13,8 +13,4 @@ print ("Project name ", repos[0].slug)
 repo = t.repo('yanivomc/travis-lab')
 print ("The last build ID is: ", repo.last_build_id)
 build = t.build(repo.last_build_id)
-print build
-
-print build.restart()
-
 
